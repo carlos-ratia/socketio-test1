@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile/Dockerfile
+    env_file: ./backend/.env
+    ports:
+      - 4000:4000
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile/Dockerfile
+    ports:
+      - 80:80
